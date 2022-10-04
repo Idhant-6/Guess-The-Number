@@ -1,20 +1,50 @@
 from art import logo
 from random import randint
-#Number Guessing Game Objectives:
+import pyttsx3
+from requests.api import put
+import speech_recognition as sr 
+import wikipedia 
+import sys
+import webbrowser   
+import os
+import smtplib
+import time
+import random
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from PIL import Image, ImageGrab
+import requests
+from bs4 import BeautifulSoup
+import psutil
+import cv2
+import speedtest
+import pyautogui
+import datetime
+import pandas
+import lib
 
-# Include an ASCII art logo.
-# Allow the player to submit a guess for a number between 1 and 100.
-# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
-# If they got the answer correct, show the actual answer to the player.
-# Track the number of turns remaining.
-# If they run out of turns, provide feedback to the player. 
-# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+# Necessary Lines to make Machine Speak! DO NOT CHANGE UNTIL NECESSARY!
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+# print(voices[0].id)
+engine.setProperty('voice', voices[0].id)
+
+
+def speak(audio):
+    """Is Used to Make Machine Speak Anything You Want..."""
+    engine.say(audio)
+    engine.runAndWait()
+
+def prispk(value):
+    """Used to Both Speak And Print Commands at the Same Time."""
+    print(value)
+    speak(value)
 
 answer = randint(1, 100)
 chances_left = 0
 quit_game = False
 print(logo)
-print(f"Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
+prispk(f"Welcome to the Number Guessing Game!\nI'm thinking of a number between 1 and 100.")
 difficulty_level = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
 
 if difficulty_level == "easy":
