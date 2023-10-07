@@ -1,27 +1,47 @@
-from art import logo
-from random import randint
+from art import logo_list
+from random import randint, choice
 
 def play_game():
-    answer = randint(1, 100)
+    max = 0
+
     chances_left = 0
     quit_game = False
 
-    print(logo)
+    print(choice(logo_list))
     print("Welcome to the Number Guessing Game!")
-    print("I'm thinking of a number between 1 and 100.")
+
     
     # Choose difficulty level
-    difficulty_level = input("Choose a difficulty. Type 'easy'/'hard' or 'extreme': ").lower()
+    print("Choose a difficulty:")
+    print(" (0) - Child's Play")
+    print(" (1) - Easy")
+    print(" (2) - Hard")
+    print(" (3) - Extreme")
+    print(" (4) - Nightmare")
+    user_input = input("Input: ").lower()
 
-    if difficulty_level == "easy":
+    if int(user_input) == 0:
+        max = 10
         chances_left += 10
-    elif difficulty_level == "hard":
+    elif int(user_input) == 1:
+        max = 20
+        chances_left += 10
+    elif int(user_input) == 2:
+        max = 50
         chances_left += 5
-    elif difficulty_level == "extreme":
+    elif int(user_input) == 3:
+        max = 50
         chances_left += 3
+    elif int(user_input) == 4:
+        max = 100
+        chances_left += 1
     else:
         print("Invalid Input. You Lost!")
         return
+
+    print("I'm thinking of a number between 1 and {}.".format(max))
+    print(f"You have {chances_left} chances left.")
+    answer = randint(1, max)
 
     while chances_left > 0:
         user_guess = int(input("Make a guess: "))
@@ -35,7 +55,7 @@ def play_game():
             print(f"You got it! The answer was {answer}")
             print(f"You completed the game with {chances_left} chances remaining.")
             break
-        print(f"You have {chances_left} chances left.")
+        print(f"You have {chances_left} chances left.\n")
     
     if chances_left == 0:
         print(f"Sorry, you've run out of chances. The correct answer was {answer}")
