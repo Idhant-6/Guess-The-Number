@@ -1,6 +1,6 @@
 # Guess The Number Game 🌟✨
 
-### This is a Python based Game Made in 2 different modes, Hard and Easy, Inform me Me If you Can win the Hard Mode!!
+### This is a Python based Game Made in 4 different modes. Inform me Me If you Can win the Nightmare Mode!!
 
 #### Anyone Can Contribute to This Project, and can Contact me If you need any help Regarding This Project!
 
