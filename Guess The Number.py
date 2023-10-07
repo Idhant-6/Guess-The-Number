@@ -1,5 +1,5 @@
-from art import logo
-from random import randint
+from art import logo_list
+from random import randint, choice
 
 def play_game():
     max = 0
@@ -7,7 +7,7 @@ def play_game():
     chances_left = 0
     quit_game = False
 
-    print(logo)
+    print(choice(logo_list))
     print("Welcome to the Number Guessing Game!")
 
     
