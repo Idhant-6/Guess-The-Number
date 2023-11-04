@@ -11,7 +11,7 @@ def play_game():
     print("I'm thinking of a number between 1 and 100.")
     
     # Choose difficulty level
-    difficulty_level = input("Choose a difficulty. Type 'easy'/'hard' or 'extreme': ").lower()
+    difficulty_level = input("Choose a difficulty. Type 'easy', 'hard' or 'extreme': ").lower()
 
     if difficulty_level == "easy":
         chances_left += 10
