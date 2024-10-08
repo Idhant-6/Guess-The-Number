@@ -1,6 +1,6 @@
 # Guess The Number Game 🌟✨
 
-### This is a Python based Game Made in 2 different modes, Hard and Easy, Inform me Me If you Can win the Hard Mode!!
+###  This is a python game in which you get chances to guess a number and the level goes between easy, medium, hard and extremee.
 
 #### Anyone Can Contribute to This Project, and can Contact me If you need any help Regarding This Project!
 
